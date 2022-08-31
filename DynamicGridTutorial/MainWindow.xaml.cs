@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -11,7 +12,9 @@ namespace DynamicGridTutorial
         public MainWindow()
         {
             InitializeComponent();
+
             CreateGrid();
+
             DynamicPanel.Children.Add(DynamicGrid);
         }
         private void CreateGrid()
@@ -64,7 +67,7 @@ namespace DynamicGridTutorial
             txtBlock1.VerticalAlignment = VerticalAlignment.Top;
 
             Grid.SetRow(txtBlock1, 0);
-            Grid.SetColumn(txtBlock1, 1);
+            Grid.SetColumn(txtBlock1, 0);
 
             DynamicGrid.Children.Add(txtBlock1);
 
@@ -130,6 +133,41 @@ namespace DynamicGridTutorial
             bookText.FontWeight = FontWeights.Bold;
 
             Grid.SetRow(bookText, 1);
+            Grid.SetColumn(bookText, 2);
+
+            DynamicGrid.Children.Add(bookText);
+
+            CreateSecondRow();
+        }
+
+        private void CreateSecondRow()
+        {
+            TextBlock authorText = new TextBlock();
+            authorText.Text = "Mike Gold";
+            authorText.FontSize = 12;
+            authorText.FontWeight = FontWeights.Bold;
+
+            Grid.SetRow(authorText, 2);
+            Grid.SetColumn(authorText, 0);
+
+            DynamicGrid.Children.Add(authorText);
+
+            TextBlock ageText = new TextBlock();
+            ageText.Text = "35";
+            ageText.FontSize = 12;
+            ageText.FontWeight = FontWeights.Bold;
+
+            Grid.SetRow(ageText, 2);
+            Grid.SetColumn(ageText, 1);
+
+            DynamicGrid.Children.Add(ageText);
+
+            TextBlock bookText = new TextBlock();
+            bookText.Text = "Programming C#";
+            bookText.FontSize = 12;
+            bookText.FontWeight = FontWeights.Bold;
+
+            Grid.SetRow(bookText, 2);
             Grid.SetColumn(bookText, 2);
 
             DynamicGrid.Children.Add(bookText);
