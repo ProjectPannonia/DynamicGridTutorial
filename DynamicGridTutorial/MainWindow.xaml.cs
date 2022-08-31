@@ -1,23 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DynamicGridTutorial
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private Grid DynamicGrid;
@@ -26,6 +12,7 @@ namespace DynamicGridTutorial
         {
             InitializeComponent();
             CreateGrid();
+            DynamicPanel.Children.Add(DynamicGrid);
         }
         private void CreateGrid()
         {
@@ -112,6 +99,40 @@ namespace DynamicGridTutorial
             Grid.SetColumn(txtBlock3, 2);
 
             DynamicGrid.Children.Add(txtBlock3);
+
+            CreateFirstRow();
+        }
+        private void CreateFirstRow()
+        {
+            TextBlock authorText = new TextBlock();
+            authorText.Text = "Mahesh Chand";
+            authorText.FontSize = 12;
+            authorText.FontWeight = FontWeights.Bold;
+
+            Grid.SetRow(authorText, 1);
+            Grid.SetColumn(authorText, 0);
+
+            DynamicGrid.Children.Add(authorText);
+
+            TextBlock ageText = new TextBlock();
+            ageText.Text = "33";
+            ageText.FontSize = 12;
+            ageText.FontWeight = FontWeights.Bold;
+
+            Grid.SetRow(ageText, 1);
+            Grid.SetColumn(ageText, 1);
+
+            DynamicGrid.Children.Add(ageText);
+
+            TextBlock bookText = new TextBlock();
+            bookText.Text = "GDI+ Programming";
+            bookText.FontSize = 12;
+            bookText.FontWeight = FontWeights.Bold;
+
+            Grid.SetRow(bookText, 1);
+            Grid.SetColumn(bookText, 2);
+
+            DynamicGrid.Children.Add(bookText);
         }
     }
 }
