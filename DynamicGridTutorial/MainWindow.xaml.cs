@@ -64,6 +64,21 @@ namespace DynamicGridTutorial
             DynamicGrid.RowDefinitions.Add(gridRow1);
             DynamicGrid.RowDefinitions.Add(gridRow2);
             DynamicGrid.RowDefinitions.Add(gridRow3);
+
+            CreateFirstColumnHeader();
+        }
+
+        private void CreateFirstColumnHeader()
+        {
+            TextBlock txtBlock1 = new TextBlock();
+            txtBlock1.Text = "Author Name";
+            txtBlock1.FontSize = 14;
+            txtBlock1.FontWeight = FontWeights.Bold;
+            txtBlock1.Foreground = new SolidColorBrush(Colors.IndianRed);
+            txtBlock1.VerticalAlignment = VerticalAlignment.Top;
+
+            Grid.SetRow(txtBlock1, 0);
+            Grid.SetColumn(txtBlock1, 1);
         }
     }
 }
