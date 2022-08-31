@@ -15,7 +15,6 @@ namespace DynamicGridTutorial
 
             CreateGrid();
 
-            DynamicPanel.Children.Add(DynamicGrid);
         }
         private void CreateGrid()
         {
@@ -171,6 +170,12 @@ namespace DynamicGridTutorial
             Grid.SetColumn(bookText, 2);
 
             DynamicGrid.Children.Add(bookText);
+
+            AddGridToPanel();
+        }
+        private void AddGridToPanel()
+        {
+            DynamicPanel.Children.Add(DynamicGrid);
         }
     }
 }
