@@ -67,7 +67,6 @@ namespace DynamicGridTutorial
 
             CreateFirstColumnHeader();
         }
-
         private void CreateFirstColumnHeader()
         {
             TextBlock txtBlock1 = new TextBlock();
@@ -79,6 +78,40 @@ namespace DynamicGridTutorial
 
             Grid.SetRow(txtBlock1, 0);
             Grid.SetColumn(txtBlock1, 1);
+
+            DynamicGrid.Children.Add(txtBlock1);
+
+            CreateSecondColumnHeader();
+        }
+        private void CreateSecondColumnHeader()
+        {
+            TextBlock txtBlock2 = new TextBlock();
+            txtBlock2.Text = "Age";
+            txtBlock2.FontSize = 14;
+            txtBlock2.FontWeight = FontWeights.Bold;
+            txtBlock2.Foreground = new SolidColorBrush(Colors.IndianRed);
+            txtBlock2.VerticalAlignment = VerticalAlignment.Top;
+
+            Grid.SetRow(txtBlock2, 0);
+            Grid.SetColumn(txtBlock2 , 1);
+
+            DynamicGrid.Children.Add(txtBlock2);
+
+            CreateThirdColumnHeader();
+        }
+        private void CreateThirdColumnHeader()
+        {
+            TextBlock txtBlock3 = new TextBlock();
+            txtBlock3.Text = "Book";
+            txtBlock3.FontSize = 14;
+            txtBlock3.FontWeight = FontWeights.Bold;
+            txtBlock3.Foreground = new SolidColorBrush(Colors.IndianRed);
+            txtBlock3 .VerticalAlignment = VerticalAlignment.Top;
+
+            Grid.SetRow(txtBlock3, 0);
+            Grid.SetColumn(txtBlock3, 2);
+
+            DynamicGrid.Children.Add(txtBlock3);
         }
     }
 }
